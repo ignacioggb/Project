@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+	<meta charset="UTF-8">
+	<title>Invoice</title>
+
+	<!-- jQuery -->
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+
+	<!-- Bootstrap CDN-->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="icon" href="favicon-32x32.png" type="image/png" sizes="16x16">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+		integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	<!-- Firebase Reference -->
+
+
+</head>
+
+<body>
+
+	<nav class="navbar navbar-expand-lg navbar-dark bg-info py-2 sticky-top">
+		<div class="container">
+			<a class="navbar-brand" href="index3.html">
+				<i class="fas fa-clipboard-list mr-2"></i> In-Vox
+			</a>
+
+			<ul class="navbar-nav">
+				<li class="nav-item active">
+					<a class="nav-link" href="home.html">Home</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="invoice.html">Invoice</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="inventory.html">Inventory</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+	<div class="container px-0">
+
+		<br>
+
+		<!-- Jumbotron Title -->
+		<div class="jumbotron bg-dark text-white">
+			<h1 class="text-center">Invoice generator</h1>
+		</div>
+	</div>
+
+
+		<div class="container bg-light">
+				<div class="row">
+					<div class="col-lg-6">
+							<div class="card" style="width: 30rem;margin:auto;padding:3rem">
+									<div class="card-body">
+											<div class="row head">
+													<div ><h1>Seller Info</h1></div>
+													
+											</div>
+										<div class="row row1">
+												<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">			
+												<label for="seller_name">Seller name</label>
+												<select class="form-control" id="seller_name">
+														<option>Team #6 Bootcamp</option>
+													  </select>
+													</div>
+											</div>
+					
+							
+										<div class="row row2">
+												<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+														<label for="seller_tax_no">Seller RFC/TAX No.</label>
+														<select class="form-control" id="seller_tax_no">
+																<option>TMBC10042019</option>
+															  </select>
+													</div>
+												</div>
+							
+											<div class="row row3">
+													<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+															<label for="seller_street">Street and No.</label>
+															<select class="form-control" id="seller_street">
+																	<option>Calle Parque Lira S/N, Bosque de Chapultepec I Secc</option>
+																  </select>
+																</div>
+												</div>
+							
+												<div class="row row4">
+														<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+																<label for="seller_post_code">Post Code</label>
+																<select class="form-control" id="seller_post_code">
+																		<option>11850</option>
+																	  </select>
+															</div>
+															<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+																	<label for="seller_city">City</label>
+																	<select class="form-control" id="seller_city">
+																			<option>Mexico</option>
+																		  </select>
+																</div>
+													</div>
+													<div class="row row5">
+															<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+																	<label for="seller_bank_account">Bank Account</label>
+																	<select class="form-control" id="seller_bank_account">
+																			<option>120256314789</option>
+																		  </select>
+																</div>
+															</div>
+										</div>
+								  </div>
+					</div>
+					<div class=" col-lg-6">
+							<div class="card" style="width: 30rem;margin:auto;padding:3rem">
+									<div class="card-body">
+											<div class="row head">
+													<div ><h1>Buyer Info</h1></div>
+													
+											</div>
+										<div class="row">
+												<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+														<label for="buyer_name">Buyer Name</label>
+														<input type="text" class="form-control" id="buyer_name" placeholder="Buyer Name">
+													</div>
+													<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+															<label for="buyer_tax_no">Tax No./RFC</label>
+															<input type="text" class="form-control" id="buyer_tax_no" placeholder="RFC/TAX No">
+														</div>
+										</div>
+			
+										<div class="row">
+												<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+														<label for="buyer_street">Street</label>
+														<input type="text" class="form-control" id="buyer_street" placeholder="Buyer Street">
+													</div>
+										</div>
+			
+										<div class="row">
+												<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+														<label for="buyer_post_code">Post Code</label>
+														<input type="text" class="form-control" id="buyer_post_code" placeholder="Example: 85061">
+													</div>
+													<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+															<label for="buyer_city">City</label>
+															<input type="text" class="form-control" id="buyer_city" placeholder="City">
+														</div>
+										</div>
+			
+										<div class="row">
+												<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+														<label for="buyer_email">e-mail</label>
+														<input type="email" class="form-control" id="buyer_email" placeholder="user@example.com">
+													</div>
+			
+										</div>
+										
+										<div class="row">
+												<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+														<label for="buyer_phone">Phone</label>
+														<input type="text" class="form-control" id="buyer_phone" placeholder="Phone Number">
+													</div>
+													<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+															<label for="buyer_mobile_phone">Mobile</label>
+															<input type="text" class="form-control" id="buyer_mobile_phone" placeholder="Optional">
+														</div>
+										</div>
+										</div>
+									</div>
+					
+						</div>
+				</div>
+			</div>
+					
+			
+
+
+	<div class="container bg-light py-3 mb-3">
+		<div class="card" style="border-radius: 15px;">
+			<h5 class="card-header">Invoice Entries</h5>
+			<div class="card-body">
+
+				<div class="container">
+					<div class="row">
+						<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+							<label for="item">Item</label>
+						</div>
+						<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+							<label for="available">Available</label>
+			
+						</div>
+						<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 text-wrap">
+							<label for="qty">QTY.</label>
+						</div>
+
+						<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+							<label for="qty_unit">Qty. Unit</label>
+
+						</div>
+						<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+							<label for="unit_price">Unit Price</label>
+						</div>
+						<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+							<label for="tax">VAT%</label>
+						</div>
+						<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+							<label for="net_total">Net. Total</label>
+						</div>
+
+						<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+							<label for="total_tax">Total+VAT%</label>
+
+						</div>
+
+					</div>
+				</div>
+
+				<div class="container">
+						<div class="row">
+							<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+								<select class="form-control" id="item">
+									<option>Select an item</option>
+								</select>
+							</div>
+							<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+								<input type="text" value="0" id="available" class="field left form-control" readonly>
+	
+							</div>
+							<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 text-wrap">
+								<input type="number" value="1" class="form-control" min="1" max="10" id="qty"
+									placeholder="#">
+	
+							</div>
+	
+							<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+								<select class="form-control" id="qty_unit">
+									<option>pc</option>
+									<option>lb.</option>
+									<option>ft.</option>
+								</select>
+							</div>
+							<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+								<input type="text" value="0" id="unit_price" class="field left form-control" readonly>
+	
+							</div>
+							<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+								<select class="form-control" id="tax">
+									<option>10</option>
+									<option>16.</option>
+									<option>more ...</option>
+								</select>
+							</div>
+							<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+								<input type="text" value="0" id="net_total" class="field left form-control" readonly>
+	
+							</div>
+	
+							<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+								<input type="text" value="0" id="total_tax" class="field left form-control" readonly>
+	
+							</div>
+							<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 offset-md-1">
+								<button type="submit" class="btn btn-info add-item">add</button>
+							</div>
+						</div>
+			</div>
+
+			<table class="table table-hover table-striped mt-3">
+				<thead>
+					<tr>
+
+						<th scope="col">Item</th>
+						<th scope="col">QTY.</th>
+						<th scope="col">QTY Unit</th>
+						<th scope="col">Unit Price</th>
+						<th scope="col">VAT%</th>
+						<th scope="col">Net. Total</th>
+						<th scope="col">Total + VAT%</th>
+					</tr>
+				</thead>
+				<tbody id="tbody">
+
+				</tbody>
+			</table>
+			<div class="card float-right w-25">
+
+				<ul class="list-group list-group-flush">
+					<li class="list-group-item">Net Total<span style="float: right" id="net">0.00</span></li>
+					<li class="list-group-item">VAT Total<span style="float: right" id="vat">0.00</span></li>
+					<li class="list-group-item">Gross Total<span style="float: right" id="gross">0.00</span></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+	<div class="container bg-light text-black-50 mb-5 py-3">
+
+
+		<div class="row">
+			<div class="row-head ml-3">
+				<h1>Preferences</h1>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+				<label for="currency">Currency</label>
+
+			</div>
+			<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+				<label for="payment_to">Due date</label>
+
+			</div>
+		</div>
+
+		<div class="row">
+
+			</div>
+	
+			<div class="row">
+				<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+					<select class="form-control" id="currency">
+						<option>MXN</option>
+						<option>USD</option>
+					</select>
+				</div>
+				<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+					<select class="form-control" id="payment_to">
+						<option>1 day</option>
+						<option>7 days</option>
+						<option>15 days</option>
+						<option>1 month</option>
+						<option>not defined</option>
+					</select>
+				</div>
+	
+				<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 offset-md-1">
+					<button type="submit" class="btn btn-info add">Submit</button>
+				</div>
+			</div>
+
+
+	</div>
+
+	
+
+
+	<!-- 	<footer class="fixed-bottom bg-dark text-center text-white-50 py-2 mt-3">
+		<small>Copyright © In-Vox 2019</small>
+	</footer> -->
+
+	<script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+	<!-- JavaScript -->
+	<script src="api.js"></script>
+    <footer class="fixed-bottom bg-dark text-center text-white-50 py-2 mt-4">
+			<small>Copyright © In-Vox 2019</small>
+		</footer>
+	
+</body>
+
+</html>

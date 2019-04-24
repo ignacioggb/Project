@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+	<meta charset="UTF-8">
+	<title>Invoice</title>
+
+	<!-- jQuery -->
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+
+	<!-- Bootstrap CDN-->
+	<link rel="icon" href="favicon-32x32.png" type="image/png" sizes="16x16">
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+		integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+	<!-- Firebase Reference -->
+
+
+</head>
+
+<body>
+	
+		<nav class="navbar navbar-expand-lg navbar-dark bg-info py-2 sticky-top">
+				<div class="container">
+					<a class="navbar-brand" href="index3.html">
+						<i class="fas fa-clipboard-list mr-2"></i> In-Vox
+					</a>
+					<ul class="navbar-nav">
+						<li class="nav-item active">
+							<a class="nav-link" href="home.html">Home</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="invoice.html">Invoice</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="inventory.html">Inventory</a>
+						</li>
+					</ul>
+				</div>
+			</nav>
+
+	<div class="container px-0">
+
+		<br>
+
+		<!-- Jumbotron Title -->
+		<div class="jumbotron bg-dark text-white">
+			<h1 class="text-center">Inventory</h1>
+		</div>
+	</div>
+
+	<div class="container bg-secondary text-white py-4" style="border-radius: 5px">
+	<div class="row">
+
+		<div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
+				<label for="query">Product</label>
+				<input type="text" class="form-control mb-2" id="query" placeholder="Search!">
+		</div>
+
+		<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+		<label for="choose">choose store</label>
+		<select class="form-control" id="choose">
+				<option>Walmart</option>
+				<option>Etsy</option>
+			  </select>
+			</div>
+
+			<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+					<label for="number"># of results</label>
+					<input type="number" class="form-control" min="5" max="10" id="number" placeholder="#" readonly>		
+		
+	</div>
+	<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+<br>
+			<button id="search" class="btn btn-primary">Search</button>
+		</div>
+	</div>
+</div>
+
+	<div class="container mb-4" id="cont">
+
+	</div>
+
+
+
+
+
+
+
+
+
+
+	<script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+	<!-- JavaScript -->
+	<script src="api2.js"></script>
+    <footer class="fixed-bottom bg-dark text-center text-white-50 py-2 mt-4">
+			<small>Copyright © In-Vox 2019</small>
+		</footer>
+</body>
+
+</html>
